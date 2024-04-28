@@ -16,6 +16,15 @@ class DocumentRankerManager(BaseModel):
 
 @app.post("/rerank/")
 def rerank_docs(manager: DocumentRankerManager) -> list:
+    """
+    Reranks a list of documents based on a given query text and ranker model.
+
+    Args:
+        manager (DocumentRankerManager): An object containing the query text, unranked documents, and ranker model.
+
+    Returns:
+        list: A list of reranked documents based on the given query text and ranker model.
+    """
     query_text = manager.query_text
     ranker_model = manager.ranker_model
     unranked_docs = manager.unranked_docs

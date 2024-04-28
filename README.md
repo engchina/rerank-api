@@ -10,7 +10,7 @@ conda activate raranker-api
 
 ```bash
 pip install -r requirements.txt
-``
+```
 
 ## Run
 

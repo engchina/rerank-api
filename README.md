@@ -4,8 +4,8 @@ Reranker API
 ## Prepare
 
 ```
-conda create -n reranker-api python=3.11 -y
-conda activate reranker-api
+conda create -n rerank-api python=3.11 -y
+conda activate rerank-api
 ```
 
 ```bash

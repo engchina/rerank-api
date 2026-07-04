@@ -55,6 +55,8 @@ async def rerank_docs(request: Request, body: JinaRankerBody):
 
     # 为Jina AI API格式构建返回结果
     results = []
+    if isinstance(ce_scores, float):  # 1ペア時はスカラーが返る
+        ce_scores = [ce_scores]
     for idx, score in enumerate(ce_scores):
         results.append({
             "credentials": "set to no dict to skip update",

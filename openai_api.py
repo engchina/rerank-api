@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request
 from pydantic import BaseModel
 
 # 设置环境变量，指定模型和数据集路径
-MODEL_PATH = "/app/models/"
+MODEL_PATH = "/root/HuggingFaceCache/"
 os.environ['TRANSFORMERS_OFFLINE'] = "1"
 os.environ['HF_DATASETS_OFFLINE'] = "1"
 
@@ -15,7 +15,7 @@ WORKER_API_EMBEDDING_BATCH_SIZE = int(os.getenv("FASTCHAT_WORKER_API_EMBEDDING_B
 
 app = FastAPI()
 # bce_reranker_base_v1 = RerankerModel(model_name_or_path="maidalun1020/bce-reranker-base_v1")
-bce_reranker_base_v1 = RerankerModel(model_name_or_path=MODEL_PATH + "maidalun1020/bce-reranker-base_v1")
+bce_reranker_base_v1 = RerankerModel(model_name_or_path=MODEL_PATH + "bce-reranker-base_v1", device="cuda:0", use_fp16=True)
 
 
 class JinaRankerBody(BaseModel):

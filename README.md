@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ## Run
 
 ```
-uvicorn main:app --reload --host 0.0.0.0 --port 7987
+uvicorn main:app --reload --host 0.0.0.0 --port 8886
 or on windows
 ./main.bat
 or on linux
@@ -25,7 +25,7 @@ or on linux
 ## Use
 
 ```
-http://localhost:7987/v1/rerank
+http://localhost:8886/v1/rerank
 ```
 
 ## Supported Models
